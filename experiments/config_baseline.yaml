@@ -1,0 +1,20 @@
+env_name: "LunarLander-v2"
+
+seed: 0
+num_episodes: 1000
+max_steps_per_episode: 1000
+
+gamma: 0.99
+learning_rate: 0.0005
+batch_size: 64
+replay_buffer_size: 100000
+min_replay_size: 10000
+
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_decay_episodes: 500
+
+target_update_freq: 1000  # steps
+train_freq: 4             # every N steps
+
+hidden_sizes: [128, 128]
