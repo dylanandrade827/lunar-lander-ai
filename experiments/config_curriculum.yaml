@@ -20,3 +20,6 @@ train_freq: 4             # every N steps
 hidden_sizes: [128, 128]
 
 use_reward_shaping: false
+
+use_curriculum: true
+easy_episodes: 200
