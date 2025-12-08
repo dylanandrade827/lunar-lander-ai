@@ -1,0 +1,24 @@
+env_name: "LunarLander-v3"
+
+seed: 0
+num_episodes: 500
+max_steps_per_episode: 500
+
+gamma: 0.99
+learning_rate: 0.0005
+batch_size: 64
+replay_buffer_size: 100000
+min_replay_size: 10000
+
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_decay_episodes: 300
+
+target_update_freq: 1000
+train_freq: 4
+hidden_sizes: [128, 128]
+
+use_reward_shaping: true      #  turn shaping ON
+use_curriculum: false         # keep curriculum OFF
+
+experiment_name: "shaping_seed0"   # logs for this go to experiments/shaping_seed0/

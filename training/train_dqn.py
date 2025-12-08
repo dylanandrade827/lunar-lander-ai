@@ -60,5 +60,17 @@ def train(config_path, log_dir="experiments/baseline_run"):
     env.close()
 
 if __name__ == "__main__":
-    Path("experiments/baseline_run").mkdir(parents=True, exist_ok=True)
-    train("experiments/config_baseline.yaml", log_dir="experiments/baseline_run")
+    import sys
+    from pathlib import Path
+
+    if len(sys.argv) > 1:
+        config_path = sys.argv[1]
+        # e.g., "experiments/config_baseline_seed0.yaml" -> "config_baseline_seed0"
+        stem = Path(config_path).stem
+        log_dir = f"experiments/{stem}"
+    else:
+        # fallback if you run without arguments
+        config_path = "experiments/config_baseline_seed0.yaml"
+        log_dir = "experiments/config_baseline_seed0"
+
+    train(config_path, log_dir=log_dir)
